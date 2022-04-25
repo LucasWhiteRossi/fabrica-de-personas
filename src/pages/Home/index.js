@@ -9,9 +9,18 @@ export function Home(){
     return (
 
         <div className='homePage'>
-            <Navbar/>
+            <Navbar />
             <div className="home-body">
-                <img src={logo} alt="Logo Fábrica de Personas"/>
+            <div class='light x1'></div>
+            <div class='light x2'></div>
+            <div class='light x3'></div>
+            <div class='light x4'></div>
+            <div class='light x5'></div>
+            <div class='light x6'></div>
+            <div class='light x7'></div>
+            <div class='light x8'></div>
+            <div class='light x9'></div>
+                <img className = "m-5 rounded" src={logo} alt="Logo Fábrica de Personas" style={{backgroundColor:"rgba(255,255,255, 0.5)", width:"400px", height:"auto"}}/>
             </div>
         </div>
     );

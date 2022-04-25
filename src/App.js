@@ -3,8 +3,7 @@ import {Home} from './pages/Home';
 import {Cadastro} from './pages/Cadastro';
 import {Personas} from './pages/Personas';
 import {Edit} from './pages/Edit';
-
-
+import './App.css';
 
 
 function App() {
