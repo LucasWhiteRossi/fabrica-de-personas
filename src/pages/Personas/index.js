@@ -7,11 +7,11 @@ import { Navbar } from '../../components/Navbar';
 export function Personas(){
    
     const [data, setData] = useState([]);
-    const [pedidos, setPedidos] = useState([]);
+    const [persona, setPersona] = useState([]);
 
     useEffect(() => {
         async function fetchData(){
-            const response = await axios.get('https://ironrest.herokuapp.com/projetoMaozinha')
+            const response = await axios.get('https://ironrest.herokuapp.com/fabricapersona')
             setData(response.data);
         }
         fetchData()
@@ -19,37 +19,34 @@ export function Personas(){
     
     
     useEffect(() => {
-         let filtrado = data.filter((obj) => {
-             return obj.tipo === "pedido" 
-         });
-         setPedidos(filtrado);
+         setPersona(data);
     },[data]);
 
     async function handleDelete(id) {
         await axios.delete(
-        `https://ironrest.herokuapp.com/projetoMaozinha/${id}`
+        `https://ironrest.herokuapp.com/fabricapersona/${id}`
         );
-        let deletado = pedidos.filter((obj) => {
+        let deletado = persona.filter((obj) => {
             return obj._id !== id 
         });
-        setPedidos(deletado);
+        setPersona(deletado);
     }
     
     return (
         <>
         <Navbar />
         <div style={{margin: "25px", padding: "0", boxSizing: "border-box"}}>
-        <h1>PEDIDOS</h1>
-        {pedidos.map((currentPedidos) => {
+        <h1>PERSONAS CONSTRUÍDAS</h1>
+        {persona.map((currentPersona) => {
            return (
                <>
                 <div class="card" style={{width: "36rem"}} >
                     <div class="card-body">
-                      <h5 class="card-title">{currentPedidos.titulo}</h5>
-                      <h6 class="card-subtitle mb-2 text-muted">{currentPedidos.nome_instituicao}</h6>
-                        <p class="card-text">{currentPedidos.descricao}</p>
-                        <Link to={`/personas/${currentPedidos._id}`} class="card-link">Editar</Link>
-                        <button class="btn" onClick={()=>handleDelete(currentPedidos._id)}>Apagar</button>
+                      <h5 class="card-title">{currentPersona.nome}</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">{currentPersona.idade}</h6>
+                        <p class="card-text">{currentPersona.historia}</p>
+                        <Link to={`/personas/${currentPersona._id}`} class="card-link">Editar</Link>
+                        <button class="btn" onClick={()=>handleDelete(currentPersona._id)}>Apagar</button>
                     </div>
             </div>
                </>
