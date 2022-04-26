@@ -40,7 +40,7 @@ function handleChange(event){
 }
 
 function handleConfirm(){
-   
+
     axios.post("https://ironrest.herokuapp.com/fabricapersona", form);
     navigate("/");
 }
@@ -49,18 +49,20 @@ function handleConfirm(){
         <>
         <Navbar />
         <div style={{margin: "25px", padding: "0", boxSizing: "border-box"}}>
-        <h1>CONSTRUIR PERSONA</h1>
+        <h1 className="text-center" >CONSTRUIR PERSONA</h1>
         <div className="card p-3" style={{backgroundColor:"rgba(255,255,255,0.5)"}}>
         <form onSubmit={handleConfirm}>
             
             <div className="mb-3">
-                <h2 className="text-center">Escolha uma foto para sua persona</h2>
+                <h2 className="text-center">Escolha uma foto para a sua persona</h2>
+                <br></br>
                 <AvatarSelector name="imagem" handleChange={handleChange}/>
             </div>
 
-
+            <h2 className="text-center">Características Gerais</h2>
+            <br></br>
             <div class="mb-3">
-                <label for="nomeCadastro" class="form-label">Qual o nome de sua persona?</label>
+                <label for="nomeCadastro" class="form-label">Qual o <strong>nome</strong> de sua persona?</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -71,7 +73,7 @@ function handleConfirm(){
                 />
             </div> 
             <div className="mb-3">
-                <label for="idadeCadastro" className="form-label">Qual a idade de sua persona?</label>
+                <label for="idadeCadastro" className="form-label">Qual a <strong>idade</strong> de sua persona?</label>
                 <input 
                 type="text"
                 className="form-control" 
@@ -82,7 +84,7 @@ function handleConfirm(){
                 />
             </div>  
             <div className="mb-3">
-            <label for="declaradoCadastro" className="form-label">Como sua persona se declara?</label>
+            <label for="declaradoCadastro" className="form-label">Como sua persona <strong>se declara?</strong></label>
             <div className="input-group">
             <select 
                 className="form-select block" 
@@ -112,7 +114,7 @@ function handleConfirm(){
             </div>
             
             <div className="mb-3">
-                <label for="vestimentaCadastro" className="form-label">Como se veste a persona?</label>
+                <label for="vestimentaCadastro" className="form-label">Como <strong>se veste</strong> a persona?</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -123,7 +125,7 @@ function handleConfirm(){
                 />
             </div>  
             <div className="mb-3">
-                <label for="identificacaoCadastro" className="form-label">Ela se identifica com quais grupos: esportivo, religioso, político, artístico ou alguma corrente de pensamento?"</label>
+                <label for="identificacaoCadastro" className="form-label">Ela se identifica com quais <strong>grupos</strong>: esportivo, religioso, político, artístico ou alguma corrente de pensamento?"</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -134,7 +136,7 @@ function handleConfirm(){
                 />
             </div> 
             <div className="mb-3">
-                <label for="escolaridadeCadastro" className="form-label">Qual o nível de escolaridade?</label>
+                <label for="escolaridadeCadastro" className="form-label">Qual o <strong>nível de escolaridade?</strong></label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -146,7 +148,7 @@ function handleConfirm(){
             </div> 
 
             <div className="mb-3">
-                <label for="filhosCadastro" className="form-label">Sua persona tem filhos? Quantos e com que idades?</label>
+                <label for="filhosCadastro" className="form-label">Sua persona tem <strong>filhos</strong>? Quantos e com que idades?</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -159,7 +161,7 @@ function handleConfirm(){
 
 
             <div className="mb-3">
-                <label for="moradia-caracteristicasCadastro" className="form-label">Quais são as principais características do lugar onde sua persona mora? E quais são os impactos deste lugar em termos de oportunidades e desafios?</label>
+                <label for="moradia-caracteristicasCadastro" className="form-label">Quais são as principais características do <strong>lugar onde sua persona mora</strong>? E quais são os impactos deste lugar em termos de oportunidades e desafios?</label>
                 <textarea  
                 type="text"
                 className="form-control" 
@@ -170,9 +172,10 @@ function handleConfirm(){
                 aria-label="With textarea"
                 ></textarea>
             </div> 
-
+            <h2 className="text-center">Gostos e Atividades</h2>
+            <br></br>
             <div className="mb-3">
-                <label for="hobbyCadastro" className="form-label">Liste três coisas que mais gosta de fazer.</label>
+                <label for="hobbyCadastro" className="form-label">Liste <strong>três</strong> coisas que <strong>mais gosta</strong> de fazer.</label>
                 <textarea  
                 type="text"
                 className="form-control" 
@@ -184,7 +187,7 @@ function handleConfirm(){
             </div> 
 
             <div className="mb-3">
-                <label for="ocupacaoCadastro" className="form-label">Qual a ocupação da sua persona?</label>
+                <label for="ocupacaoCadastro" className="form-label">Qual a <strong>ocupação</strong> da sua persona?</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -196,7 +199,7 @@ function handleConfirm(){
             </div> 
           
             <div className="mb-3">
-            <label for="rendaCadastro" className="form-label">Qual a renda mensal da sua persona?</label>
+            <label for="rendaCadastro" className="form-label">Qual a <strong>renda mensal</strong> da sua persona?</label>
             <div className="input-group">
             <select 
                 className="form-select block" 
@@ -214,9 +217,11 @@ function handleConfirm(){
             </select>
             </div>
             </div> 
-
+            
+            <h2 className="text-center">Hirstória pessoal</h2>
+            <br></br>
             <div className="mb-3">
-                <label for="historiaCadastro" className="form-label">Quem é {form.name} na fila do pão? Se quiser, descreva um pouco da história pessoal de {form.name}.</label>
+                <label for="historiaCadastro" className="form-label">Quem é {form.name?form.name:"sua persona"} na fila do pão? Se quiser, descreva um pouco da história pessoal de {form.name?form.name:"sua persona"}.</label>
                 <textarea  
                 type="text"
                 className="form-control" 
@@ -227,8 +232,10 @@ function handleConfirm(){
                 ></textarea>
             </div> 
             
+            <h2 className="text-center">Comportamento de Compra</h2>
+            <br></br>
             <div className="mb-3">
-            <label for="local-comprasCadastro" className="form-label">Onde sua persona costuma fazer compras: online ou presencialmente?</label>
+            <label for="local-comprasCadastro" className="form-label"><strong>Onde</strong> sua persona costuma <strong>fazer compras</strong>: online ou presencialmente?</label>
             <div className="input-group">
             <select 
                 className="form-select block" 
@@ -245,7 +252,7 @@ function handleConfirm(){
             </div>
 
             <div className="mb-3">
-                <label for="comportamentoCadastro" className="form-label">Como você descreveria o comportamento de compra de sua persona? Ela prefere comprar em mercados locais? Ela frequenta shoppings? Ela prefere lojas ou sites específicos? Ela evita algum tipo de loja ou experiência?</label>
+                <label for="comportamentoCadastro" className="form-label">Como você descreveria o <strong>comportamento de compra</strong> de sua persona? Ela prefere comprar em mercados locais? Ela frequenta shoppings? Ela prefere lojas ou sites específicos? Ela evita algum tipo de loja ou experiência?</label>
                 <textarea  
                 type="text"
                 className="form-control" 
@@ -257,7 +264,7 @@ function handleConfirm(){
             </div> 
 
             <div className="mb-3">
-                <label for="lojas-preferidasCadastro" className="form-label">Em que lojas sua persona costuma comprar:</label>
+                <label for="lojas-preferidasCadastro" className="form-label"><strong>Em que lojas</strong> sua persona costuma comprar:</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -269,7 +276,7 @@ function handleConfirm(){
             </div>
             
             <div className="mb-3">
-                <label for="influenciadorCadastro" className="form-label">Que pessoas influenciam as decisões de sua persona? De que forma esta influência acontece?</label>
+                <label for="influenciadorCadastro" className="form-label">Que pessoas <strong>influenciam as decisões</strong> de sua persona? De que forma esta influência acontece?</label>
                 <textarea  
                 type="text"
                 className="form-control" 
@@ -281,7 +288,7 @@ function handleConfirm(){
             </div> 
 
             <div className="mb-3">
-                <label for="influenciadores-famososCadastro" className="form-label">Sua persona segue algum influenciador? Qual ou quais?</label>
+                <label for="influenciadores-famososCadastro" className="form-label">Sua persona <strong>segue algum influenciador</strong>? Qual ou quais?</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -292,7 +299,7 @@ function handleConfirm(){
                 />
             </div>
             <div className="mb-3">
-                <label for="pesquisaCadastro" className="form-label">Que informações sua persona busca antes de realizar uma compra ou decisão? Onde ela busca estas informações?</label>
+                <label for="pesquisaCadastro" className="form-label">Que <strong>informações sua persona busca</strong> antes de realizar uma <strong>compra ou decisão</strong>? Onde ela busca estas informações?</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -303,7 +310,7 @@ function handleConfirm(){
                 />
             </div>
             <div className="mb-3">
-                <label for="meio-comunicacaoCadastro" className="form-label">Que meios de comunicação influenciam sua persona? Ela vê televisão? Lê jornal ou revistas? Acompanha algum canal online? Quais?</label>
+                <label for="meio-comunicacaoCadastro" className="form-label">Que <strong>meios de comunicação</strong> influenciam sua persona? Ela vê televisão? Lê jornal ou revistas? Acompanha algum canal online? Quais?</label>
                 <input 
                 type="text" 
                 className="form-control" 
@@ -314,8 +321,10 @@ function handleConfirm(){
                 />
             </div>
             
+            <h2 className="text-center">Interação com Produto</h2>
+            <br></br>
             <div className="mb-3">
-                <label for="desafiosCadastro" className="form-label">Quais são os principais desafios que sua persona tem e que seu produto pode resolver?</label>
+                <label for="desafiosCadastro" className="form-label">Quais são os <strong>principais desafios</strong> que sua persona tem e que seu produto pode resolver?</label>
                 <textarea  
                 type="text"
                 className="form-control" 
@@ -327,7 +336,7 @@ function handleConfirm(){
             </div>
 
             <div className="mb-3">
-                <label for="objecoesCadastro" className="form-label">Quais são as maiores objeções que sua persona pode ter com relação ao seu produto?</label>
+                <label for="objecoesCadastro" className="form-label">Quais são as <strong>maiores objeções</strong> que sua persona pode ter com relação ao seu produto?</label>
                 <textarea  
                 type="text"
                 className="form-control" 
@@ -338,7 +347,7 @@ function handleConfirm(){
                 ></textarea>
             </div>
             <div className="mb-3">
-                <label for="oportunidadesCadastro" className="form-label">Quais as principais oportunidades ou benefícios que seu produto pode oferecer para sua persona.</label>
+                <label for="oportunidadesCadastro" className="form-label">Quais as <strong>principais oportunidades ou benefícios</strong> que seu produto pode oferecer para sua persona.</label>
                 <textarea  
                 type="text"
                 className="form-control" 
@@ -349,8 +358,10 @@ function handleConfirm(){
                 ></textarea>
             </div>
 
+            <h2 className="text-center">Tomador de decisão</h2>
+            <br></br>
             <div className="mb-3">
-                <label for="papel-personaCadastro" className="form-label">Qual o papel da persona no processo de compra? Ela é a tomadora de decisão? Ou ela é quem comunica a necessidade?</label>
+                <label for="papel-personaCadastro" className="form-label">Qual o papel da persona no processo de compra? Ela é a <strong>tomadora de decisão</strong>? Ou ela é quem <strong>comunica a necessidade</strong>? Neste caso, quem toma a decisão por ela?</label>
                 <input 
                 type="text" 
                 className="form-control" 
