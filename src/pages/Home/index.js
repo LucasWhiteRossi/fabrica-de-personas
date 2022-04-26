@@ -1,5 +1,3 @@
-import {Link} from 'react-router-dom'
-import axios from 'axios'
 import { Navbar } from '../../components/Navbar';
 import logo from "../../assets/img/logo.png"
 import './style.modules.css'
