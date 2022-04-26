@@ -3,6 +3,8 @@ import { Navbar } from '../../components/Navbar';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { AvatarSelector } from '../../components/AvatarSelector';
+
+
 export function Cadastro(){
 
 const navigate = useNavigate();
@@ -42,7 +44,7 @@ function handleChange(event){
 function handleConfirm(){
    
     axios.post("https://ironrest.herokuapp.com/fabricapersona", form);
-    navigate("/");
+    navigate("/formulario");
 }
 
     return (
