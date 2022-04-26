@@ -37,6 +37,7 @@ export function Edit(){
         "papel-persona": ""	
 });
 
+
     useEffect(() => {
         async function fetchEdit() {
             const response = await axios.get(

@@ -3,6 +3,7 @@ import {Home} from './pages/Home';
 import {Cadastro} from './pages/Cadastro';
 import {Personas} from './pages/Personas';
 import {Edit} from './pages/Edit';
+import { ImpressaoFormulario } from './pages/Formulario';
 import './App.css';
 
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/cadastro" element={<Cadastro/>}/>
         <Route path="/personas" element={<Personas/>}/>
         <Route path="/personas/:id" element={<Edit/>}/>
+        <Route path="/formulario" element={<ImpressaoFormulario />} />
       </Routes>
       </BrowserRouter>
     </div>
