@@ -10,7 +10,7 @@ export function Edit(){
     const navigate = useNavigate();
 
     const [form, setForm] = useState({
-        tipo: "pedido",
+        tipo: "persona",
 		titulo: "",
 		objetivo: "",
 		descricao: "",
