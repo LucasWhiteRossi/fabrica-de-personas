@@ -1,7 +1,7 @@
 export function AvatarOption(props){
     return (
         <div class='col text-center'>
-        <input name={props.name} type="radio" name="imgbackground" id={props.id} class="d-none imgbgchk" value={props.value}/>
+        <input onClick={props.handleChange} name={props.name} type="radio" id={props.id} class="d-none imgbgchk" value={props.id}/>
         <label for={props.id}>
         <img src={props.image} alt={props.description?props.description:"avatar photo"}/>
         <div class="tick_container">
