@@ -64,7 +64,7 @@ function handleConfirm(event){
     delete editObj._id;
 
     axios.put(`https://ironrest.herokuapp.com/fabricapersona/${params.id}`, editObj);
-    navigate("/");
+    navigate("/personas");
 }
 
     return (

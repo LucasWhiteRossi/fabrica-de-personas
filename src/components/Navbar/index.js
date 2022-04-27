@@ -14,7 +14,7 @@ return (
     <div className="nav-items">
         <Link className="btn btn-outline-danger m-2" to="/cadastro">CRIAR PERSONA</Link>
         <Link className="btn btn-outline-danger m-2" to="/personas">PERSONAS</Link>
-        <Link className="btn btn-outline-danger m-2" to="/projeto-persona">COMO UTILIZAR</Link>
+        <Link className="btn btn-outline-danger m-2" to="/como-utilizar">COMO UTILIZAR</Link>
     </div>
   </nav>
 );
