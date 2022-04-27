@@ -9,7 +9,7 @@ export function Edit(){
     const params = useParams();
 
     const navigate = useNavigate();
-
+    const [data, setData] = useState({})
     const [form, setForm] = useState({
         imagem: "",
 		nome: "",
@@ -41,12 +41,17 @@ export function Edit(){
     useEffect(() => {
         async function fetchEdit() {
             const response = await axios.get(
-            `https://ironrest.herokuapp.com/projetoMaozinha/${params.id}`      
+            `https://ironrest.herokuapp.com/fabricapersona/${params.id}`      
             );
-            setForm({...response.data});
+            setData({...response.data});
         }
         fetchEdit();
-    },[params.id]);
+    },[]);
+
+    useEffect(()=>{
+        setForm(data)
+        console.log(data)
+    },[data])
 
 function handleChange(event){
     setForm({...form,[event.target.name]: event.target.value});
@@ -55,12 +60,10 @@ function handleChange(event){
 function handleConfirm(event){
 
     event.preventDefault();
-
     const editObj = {...form};
-
     delete editObj._id;
 
-    axios.put(`https://ironrest.herokuapp.com/projetoMaozinha/${params.id}`, editObj);
+    axios.put(`https://ironrest.herokuapp.com/fabricapersona/${params.id}`, editObj);
     navigate("/");
 }
 
@@ -73,7 +76,13 @@ function handleConfirm(event){
         <form onSubmit={handleConfirm}>
             
             <div className="mb-3">
-                <h2 className="text-center">Escolha uma foto para a sua persona</h2>
+            {form.imagem && (<h2 className="text-center">Foto atual</h2>)}
+            {form.imagem && (<div className="d-flex justify-content-center">
+                < img src={require(`../../assets/avatars/${form.imagem}.jpg`)} alt={`${form.imagem}.jpg`}/>
+                <br></br>
+                </div>)}
+
+                <h2 className="text-center">Escolha uma nova foto, caso queira alterar</h2>
                 <br></br>
                 <AvatarSelector name="imagem" handleChange={handleChange}/>
             </div>
@@ -390,7 +399,7 @@ function handleConfirm(event){
                 onChange={handleChange} 
                 />
             </div>
-            <button type="submit" className="btn btn-primary">Gerar Persona</button>
+            <button type="submit" className="btn btn-primary">Atualizar Persona</button>
             </form>
             </div>
             </div>
