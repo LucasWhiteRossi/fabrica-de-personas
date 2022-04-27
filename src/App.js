@@ -5,6 +5,7 @@ import {Personas} from './pages/Personas';
 import {Edit} from './pages/Edit';
 import { Impressao } from './pages/Impressao';
 import './App.css';
+import { ProjetoPersona } from './pages/ProjetoPersona';
 
 
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/personas" element={<Personas/>}/>
         <Route path="/personas/:id" element={<Edit/>}/>
         <Route path="/impressao/:id" element={<Impressao/>} />
+        <Route path="/como-utilizar" element={<ProjetoPersona/>} />
       </Routes>
       </BrowserRouter>
     </div>

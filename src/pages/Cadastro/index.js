@@ -43,7 +43,7 @@ function handleChange(event){
 function handleConfirm(){
 
     axios.post("https://ironrest.herokuapp.com/fabricapersona", form);
-    navigate("/formulario");
+    navigate("/personas");
 }
 
     return (
@@ -235,7 +235,7 @@ function handleConfirm(){
             </div>
             </div> 
             <br></br>
-            <h2 className="text-center" style={{color:"#631354"}}>Hirstória pessoal</h2>
+            <h2 className="text-center" style={{color:"#631354"}}>História pessoal</h2>
             <br></br>
             <div className="mb-3">
                 <label for="historiaCadastro" className="form-label">Quem é {form.name?form.name:"sua persona"} na fila do pão? Se quiser, descreva um pouco da história pessoal de {form.name?form.name:"sua persona"}.</label>
