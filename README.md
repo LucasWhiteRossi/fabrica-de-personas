@@ -18,6 +18,6 @@ Priscila Azevedo: [Linkedin](https://www.linkedin.com/in/priscila-azevedo-831264
 
 Renata Siqueira: [Linkedin](https://www.linkedin.com/in/renatasiqueirass/) | [github](https://github.com/renatasiqueira)
 
----------------
+--------------
 
 As imagens utilizadas foram geradas por inteligência artificial por: [Gallery of AI Generated Faces | Generated.photos](https://generated.photos/faces) 
